@@ -1,7 +1,7 @@
 var bamazonMain = require('../bamazonMain');
 var inquirer = require('inquirer');
 var mysql = require('mysql');
-const password = "nadiq32l";
+const password = process.argv[2];
 const Table = require('cli-table');
 
 

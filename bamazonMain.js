@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const inquirer = require('inquirer');
 const bamazonCustomer = require('./Components/bamazonCustomer');
 const bamazonManager = require('./Components/bamazonManager');
-const password = "nadiq32l";
+const password = process.argv[2];
 
 
 function login() {
@@ -30,7 +30,7 @@ function login() {
                 break;
             case "Supervisor":
                 console.log(`                -------------------------------------
-                You are now in the Supervisor Platform
+                Supervisor Platform still being built
                 -------------------------------------
                 `);
                 platformLogin.supervisor();
@@ -81,7 +81,7 @@ var platformLogin = {
         };
     },
     supervisor: function() {
-
+        login();
     }
 }
 
