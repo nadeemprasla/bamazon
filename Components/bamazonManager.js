@@ -171,7 +171,7 @@ Low Inventory Items(Less than 10):
             }
         ]).then((res) => {
             var addedNewItem = new Table();
-            addedNewItem.push({ 'Product Name': res.newItemName}, { 'Department': res.newItemDepart }, { 'Price': res.newItemCost }, { 'Stock': res.newItemStock });
+            addedNewItem.push({ 'Product Name': res.newItemName }, { 'Department': res.newItemDepart }, { 'Price': res.newItemCost }, { 'Stock': res.newItemStock });
 
             console.log(`
 You have new Item:
@@ -179,17 +179,22 @@ You have new Item:
             console.log(addedNewItem.toString());
             return res
         }).then(res => {
+            values = [res.newItemName, res.newItemDepart, res.newItemCost, res.newItemStock]
             console.log(res);
-            connection.query(`
-                INSERT INTO bamazon_db.products (product_name, department_name, price, stock_quantity)
-                VALUES (${res.newItemName},${res.newItemDepart},${res.newItemCost},${res.newItemStock})
-                `, (err) => {
-                err ? console.log(err) : null;
-                })
-            this.managerOptions(login);
-            })
+            if (res.newItemName && res.newItemDepart && (res.newItemCost >= 0) && (res.newItemStock >= 0)) {
 
-        
+                connection.query(`
+                INSERT INTO bamazon_db.products (product_name, department_name, price, stock_quantity) 
+                VALUES ("${values[0]}","${values[1]}","${values[2]}","${values[3]}");
+                `, (err, res) => {
+                    err ? console.log(err) : null;
+                    console.log("New item added to system")
+                })
+            }
+            this.managerOptions(login);
+        })
+
+
 
     },
 }
