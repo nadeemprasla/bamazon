@@ -180,7 +180,6 @@ You have new Item:
             return res
         }).then(res => {
             values = [res.newItemName, res.newItemDepart, res.newItemCost, res.newItemStock]
-            console.log(res);
             if (res.newItemName && res.newItemDepart && (res.newItemCost >= 0) && (res.newItemStock >= 0)) {
 
                 connection.query(`

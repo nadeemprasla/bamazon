@@ -88,6 +88,8 @@ The next steps will help you initialize the application by installing necessary 
 2.  In the command window, run "node bamazonMain.js [password]" and replace password/brackets with password from MySQL server setup above. 
 ```
 
+### Demo Images
+
 ## Authors
 
 * **Nadeem Prasla**
