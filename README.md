@@ -1,11 +1,5 @@
 # Bamazon
 
-<!-- 1. What the project does?
-2. Why the project is useful?
-3. How users can get started with the project?
-4. Where users can get help with your project?
-5. Who maintains and contributes to the project? -->
-
 ## Overview
 
 The purpose of this project is to provide a Amazon-like storefront using mySQL, Node, NPM, and JS. At the start of the application, you will have the ability to select switch platform you would like to access: Customer, Manager and Supervisor(TBD). Depending on the platform selected, you will have the ability to see inventory items that are stored in the database and be able to interact with that data that is displayed on the console.
@@ -46,48 +40,53 @@ The instructions below will guide you to run the project on your llocal machine.
 
 ### Installing
 
+Using my MySQL WorkBench, create a local server using the parameters in the image:
+![MySQL server settings](https://github.com/nadeemprasla/bamazon/blob/master/Images/mySQL%20local%20instance.JPG)
 
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Run the MySQL code below to generate bamazon_db and tables with example data.
 
 ```
-until finished
+DROP DATABASE IF EXISTS bamazon_db;
+CREATE DATABASE bamazon_db;
+USE bamazon_db;
+
+CREATE TABLE products(
+	item_id INTEGER NOT NULL KEY AUTO_INCREMENT,
+    product_name VARCHAR(100) NOT NULL,
+    department_name VARCHAR(100) NOT NULL,
+    price INTEGER,
+    stock_quantity INTEGER);
+    
+    
+    
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("iPhone X", "Electronics", "1000","150"),
+("4K TV", "Electronics", "2000", "10"),
+("iPod", "Electronics", "100", "100"),
+("Switch", "Electronics", "415", "10"),
+("Xbox", "Electronics", "400", "20"),
+("PC", "Electronics", "3000", "5"),
+("Cheetos", "Chips", "3", "20"),
+("Kettle Jalapeno", "Chips", "2", "9"),
+("Almond Joy", "Candy", "1", "30"),
+("Kit Kat", "Candy", "1", "30"),
+("Cadbury", "Candy", "1", "50"),
+("Nike", "Shoes", "120", "15"),
+("Air Pods", "Electronics", "175", "3"),
+("USB wire", "Electronics", "3", "2"),
+("HDMI wire", "Electronics", "45", "2"),
+("TNT", "Dangerous Products", "175", "20")
+;
+
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+The next steps will help you initialize the application by installing necessary packages.
 
 ```
-Give an example
+1.  Clone github repo to your device and run "npm i" in the root folder, which will download dependencies associated to this project.
+2.  In the command window, run "node bamazonMain.js [password]" and replace password/brackets with password from MySQL server setup above. 
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 
 ## Authors
 
