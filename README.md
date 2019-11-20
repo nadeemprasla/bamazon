@@ -1,11 +1,15 @@
 # Bamazon
 
+
 ## Overview
 
 The purpose of this project is to provide a Amazon-like storefront using mySQL, Node, NPM, and JS. At the start of the application, you will have the ability to select switch platform you would like to access: Customer, Manager and Supervisor(TBD). Depending on the platform selected, you will have the ability to see inventory items that are stored in the database and be able to interact with that data that is displayed on the console.
 
 
 The instructions below will guide you to run the project on your llocal machine. Project still in development. Supervisor platform still in progress.
+
+
+
 
 ### Prerequisites
 
@@ -89,6 +93,21 @@ The next steps will help you initialize the application by installing necessary 
 ```
 
 ### Demo Images
+**Customer Platform**
+![Customer Platform](https://github.com/nadeemprasla/bamazon/blob/master/Images/1st.JPG)
+
+**Product Display**
+![Product Display](https://github.com/nadeemprasla/bamazon/blob/master/Images/product%20display.JPG)
+
+**Item Selection**
+![Item selection](https://github.com/nadeemprasla/bamazon/blob/master/Images/item%20selection.JPG)
+
+**Manager Platform**
+![Manager Platform](https://github.com/nadeemprasla/bamazon/blob/master/Images/2nd.JPG)
+
+**Adding Item**
+![Adding Item to Database](https://github.com/nadeemprasla/bamazon/blob/master/Images/add%20item.JPG)
+
 
 ## Authors
 
